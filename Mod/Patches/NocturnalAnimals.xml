@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <!-- Same guard as for the ieltxu. Two fixes against the Squirrel Variety Pack's own patch:
+       it named only the title from before Mlie took the mod over, so it never fired; and it
+       added the extension directly under <ThingDef> instead of <modExtensions>. -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[XND] Nocturnal Animals</li>
+      <li>[XND] Nocturnal Animals (Continued)</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>Defs/ThingDef[defName="FlyingSquirrel"]</xpath>
+      <value>
+        <li Class="NocturnalAnimals.ExtendedRaceProperties">
+          <bodyClock>Nocturnal</bodyClock>
+        </li>
+      </value>
+    </match>
+  </Operation>
+
+</Patch>

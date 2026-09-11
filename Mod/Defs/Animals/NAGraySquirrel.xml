@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>NAGraySquirrel</defName>
+    <label>Gray squirrel</label>
+    <description>A common arboreal rodent with several color forms.</description>
+    <statBases>
+      <Wildness>0.85</Wildness>
+      <MoveSpeed>4.5</MoveSpeed>
+      <MarketValue>25</MarketValue>
+      <ComfyTemperatureMin>-35</ComfyTemperatureMin>
+    </statBases>
+    <uiIconScale>2</uiIconScale>
+    <tools>
+      <li>
+        <label>left claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>1.1</chanceFactor>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>1</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>QuadrupedAnimalWithPawsAndTail</body>
+      <baseBodySize>0.2</baseBodySize>
+      <baseHealthScale>0.2</baseHealthScale>
+      <baseHungerRate>0.1</baseHungerRate>
+      <foodType>VegetarianRoughAnimal</foodType>
+      <leatherDef>Leather_Light</leatherDef>
+      <trainability>None</trainability>
+      <gestationPeriodDays>7.5</gestationPeriodDays>
+      <litterSizeCurve>
+        <points>
+          <li>(0, 0)</li>
+          <li>(1, 1)</li>
+          <li>(4, 1)</li>
+          <li>(8, 0)</li>
+        </points>
+      </litterSizeCurve>
+	<wildBiomes>
+		<BorealForest>0.1</BorealForest>
+		<TemperateForest>0.9</TemperateForest>
+	</wildBiomes>
+      <lifeExpectancy>12</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.11</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.2222</minAge>
+          <soundWounded>Pawn_Rodent_Wounded</soundWounded>
+          <soundDeath>Pawn_Rodent_Death</soundDeath>
+          <soundCall>Pawn_Rodent_Call</soundCall>
+          <soundAngry>Pawn_Rodent_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>NAGraySquirrel</defName>
+    <label>Gray squirrel</label>
+    <race>NAGraySquirrel</race>
+    <combatPower>20</combatPower>
+    <ecoSystemWeight>0.1</ecoSystemWeight>
+
+    <!-- Coat variants. The original mod went through AnimalVariations.dll
+         (thingClass AnimalMultiSkins + NAGraySquirrel_SkinSet.xml), a DLL with no sources
+         that does not survive the new 1.5/1.6 render tree. Vanilla has done this natively
+         since 1.4: alternateGraphics, with the same weighted draw as the original SkinSet
+         (grey 1.0 / black 0.4 / albino 0.005). -->
+    <alternateGraphicChance>1</alternateGraphicChance>
+    <alternateGraphics>
+      <li>
+        <texPath>Things/Pawn/Animal/NAGraySquirrel/NAGraySquirrel</texPath>
+        <weight>1.0</weight>
+      </li>
+      <li>
+        <texPath>Things/Pawn/Animal/NAGraySquirrel/BlackSquirrel</texPath>
+        <weight>0.4</weight>
+      </li>
+      <li>
+        <texPath>Things/Pawn/Animal/NAGraySquirrel/WhiteSquirrel</texPath>
+        <weight>0.005</weight>
+      </li>
+    </alternateGraphics>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/NAGraySquirrel/NAGraySquirrel</texPath>
+          <drawSize>0.2</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Squirrel/Dessicated_Squirrel</texPath>
+          <drawSize>0.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/NAGraySquirrel/NAGraySquirrel</texPath>
+          <drawSize>0.4</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Squirrel/Dessicated_Squirrel</texPath>
+          <drawSize>0.4</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/NAGraySquirrel/NAGraySquirrel</texPath>
+          <drawSize>0.5</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Squirrel/Dessicated_Squirrel</texPath>
+          <drawSize>0.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+
+</Defs>

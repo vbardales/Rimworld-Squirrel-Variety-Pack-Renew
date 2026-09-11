@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Realistic Planets Continued</li>
+		</mods>
+		<match Class="PatchOperationAdd"> 
+			<xpath>Defs/BiomeDef[defName="RRP_Grassland"]/wildAnimals</xpath>
+			<value>
+				<Groundhog>0.8</Groundhog>
+			</value>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>More Vanilla Biomes</li>
+		</mods>
+		<match Class="PatchOperationAdd"> 
+			<xpath>Defs/BiomeDef[defName="ZBiome_Grasslands"]/wildAnimals</xpath>
+			<value>
+				<Groundhog>0.8</Groundhog>
+			</value>
+		</match>
+	</Operation>
+
+</Patch>
