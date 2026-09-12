@@ -47,6 +47,16 @@ The original states no licence anywhere - no file, nothing in its About, no repo
 If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
 
 The update work was done with the help of an AI assistant (Claude, by Anthropic).</description>
+  <!-- The source mod defines the same defNames as this port, so the two must not run together:
+       RimWorld resolves a duplicate defName by load order and logs nothing, and the faults this port
+       fixes would come back unannounced.
+
+       Its packageId is spelled <packageID> in its own About.xml, with a capital D, which is not the
+       field RimWorld reads. The value below is what its author meant to declare; if the game does not
+       see it either, this line simply never matches, which costs nothing. -->
+  <incompatibleWith>
+    <li>sirtalis.squirrelpack</li>
+  </incompatibleWith>
   <loadAfter>
     <li>Ludeon.RimWorld</li>
     <li>Ludeon.RimWorld.Royalty</li>
